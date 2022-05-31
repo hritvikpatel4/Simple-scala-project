@@ -12,7 +12,8 @@ pipeline {
        stage('Changing directory') {
             steps {
                 echo "Changing directory..."
-                sh "cd /home/sbtuser"
+                sh "rm -rf /home/sbtuser/.sbt"
+                sh "rm -rf /root/.sbt"
                 sh "ls -al"
             }
         }
@@ -29,7 +30,6 @@ pipeline {
         stage('Compile') {
             steps {
                 echo "Compiling..."
-                sh "cd /home/sbtuser"
                 sh "sbt compile --batch -Dsbt.server.forcestart=true"
             }
         }
