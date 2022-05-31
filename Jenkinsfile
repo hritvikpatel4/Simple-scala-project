@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'sbtscala/scala-sbt:17.0.2_1.6.2_3.1.2'
+            image 'sbtscala/scala-sbt:8u332_1.6.2_2.12.15'
             // args '-v ~/.ivy2:/root/.ivy2 -v ~/.sbt:/root/.sbt -v $PWD:/app -w /app'
             args '-u sbtuser -w /home/sbtuser'
     }}
