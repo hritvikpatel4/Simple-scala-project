@@ -3,7 +3,7 @@ pipeline {
         docker {
             image 'sbtscala/scala-sbt:8u332_1.6.2_2.12.15'
             // args '-v ~/.ivy2:/root/.ivy2 -v ~/.sbt:/root/.sbt -v $PWD:/app -w /app'
-            args '-u sbtuser -w /home/sbtuser -v $PWD:/home/sbtuser'
+            args '-v ~/.ivy2:/root/.ivy2 -v ~/.sbt:/root/.sbt -u sbtuser -w /home/sbtuser -v $PWD:/home/sbtuser'
     }}
 
     stages {
