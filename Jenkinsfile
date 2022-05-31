@@ -21,6 +21,7 @@ pipeline {
             steps {
                 echo "Debuging..."
                 sh "echo $PWD"
+                sh "whoami"
             }
         }
 
