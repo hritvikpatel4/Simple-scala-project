@@ -27,7 +27,7 @@ pipeline {
         stage('Compile') {
             steps {
                 echo "Compiling..."
-                sh "echo $PWD"
+                sh "cd /home/sbtuser"
                 sh "sbt compile"
             }
         }
