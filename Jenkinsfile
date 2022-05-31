@@ -30,7 +30,7 @@ pipeline {
             steps {
                 echo "Compiling..."
                 sh "cd /home/sbtuser"
-                sh "sbt compile"
+                sh "sbt compile -Dsbt.server.socketlocation=/home/nandani/normal-dir/.custom-socket-location"
             }
         }
 
