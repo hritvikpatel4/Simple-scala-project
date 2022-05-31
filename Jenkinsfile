@@ -1,32 +1,27 @@
 pipeline {
 
-    agent {
-        docker {
-            image 'mozilla/sbt:latest'
-            args '-v /root/.ivy2:/root/.ivy2 -v /root/.sbt:/root/.sbt -v $PWD:/app -w /app'
-        }
-    }
+    agent any
 
     stages {
 
         stage('Compile') {
             steps {
                 echo "Compiling..."
-                sh "sbt compile"
+                sh "${tool name: 'sbt', type: 'org.jvnet.hudson.plugins.SbtPluginBuilder$SbtInstallation'}/bin/sbt compile"
             }
         }
 
         stage('Test') {
             steps {
                 echo "Testing..."
-                sh "sbt test"
+                sh "${tool name: 'sbt', type: 'org.jvnet.hudson.plugins.SbtPluginBuilder$SbtInstallation'}/bin/sbt test"
             }
         }
 
         stage('Package') {
             steps {
                 echo "Packaging..."
-                sh "sbt package"
+                sh "${tool name: 'sbt', type: 'org.jvnet.hudson.plugins.SbtPluginBuilder$SbtInstallation'}/bin/sbt package"
             }
         }
 
