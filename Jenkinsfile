@@ -9,6 +9,14 @@ pipeline {
 
     stages {
         
+       stage('Changing directory') {
+            steps {
+                echo "Changing directory..."
+                sh "cd /home/sbtuser"
+                sh "ls -al"
+            }
+        }
+       
         stage('Debug') {
             steps {
                 echo "Debuging..."
