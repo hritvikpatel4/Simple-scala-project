@@ -10,14 +10,14 @@ pipeline {
 
     stages {
         
-       stage('Changing directory') {
-            steps {
-                echo "Changing directory..."
-                sh "rm -rf /home/sbtuser/.sbt"
-                sh "rm -rf /root/.sbt"
-                sh "ls -al"
-            }
-        }
+//        stage('Changing directory') {
+//             steps {
+//                 echo "Changing directory..."
+//                 sh "rm -rf /home/sbtuser/.sbt"
+//                 sh "rm -rf /root/.sbt"
+//                 sh "ls -al"
+//             }
+//         }
        
         stage('Debug') {
             steps {
