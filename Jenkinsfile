@@ -1,6 +1,9 @@
 pipeline {
-
-    agent any
+    agent {
+        docker {
+            image 'sbtscala/scala-sbt:8u332_1.6.2_2.12.15'
+            // args '-v ~/.ivy2:/root/.ivy2 -v ~/.sbt:/root/.sbt -v $PWD:/app -w /app'
+    }}
 
     stages {
 
