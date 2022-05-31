@@ -22,6 +22,7 @@ pipeline {
                 echo "Debuging..."
                 sh "echo $PWD"
                 sh "whoami"
+                sh "ls -al"
             }
         }
 
