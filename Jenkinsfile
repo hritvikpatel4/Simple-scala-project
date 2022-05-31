@@ -11,7 +11,7 @@ pipeline {
         stage('Compile') {
             steps {
                 echo "Compiling..."
-                sh "sbt/bin/sbt compile"
+                sh "sbt compile"
             }
         }
 
