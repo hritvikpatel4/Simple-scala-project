@@ -27,13 +27,14 @@ pipeline {
         stage('Compile') {
             steps {
                 echo "Compiling..."
+                sh "echo $PWD"
                 sh "sbt compile"
             }
         }
 
         stage('Test') {
             steps {
-                echo "Testing..."
+                echo "Testing.."
                 sh "sbt test"
             }
         }
