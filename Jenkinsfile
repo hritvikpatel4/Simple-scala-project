@@ -4,7 +4,8 @@ pipeline {
             image 'sbtscala/scala-sbt:8u332_1.6.2_2.12.15'
             //args '-v /root/.ivy2:/root/.ivy2 -v /root/.sbt:/root/.sbt -v $PWD:/app -w /app'
             //args '-v /root/.ivy2:/root/.ivy2 -v /root/.sbt:/root/.sbt -u sbtuser -w /home/sbtuser -v $PWD:/home/sbtuser'
-            args '-v /root/.sbt:/root/.sbt -u sbtuser -w /home/sbtuser -v $PWD:/home/sbtuser'
+            //args '-v /root/.sbt:/root/.sbt -u sbtuser -w /home/sbtuser -v $PWD:/home/sbtuser'
+            args '-v /root/.sbt:/root/.sbt -u root -w /root -v $PWD:/root'
     }}
 
     stages {
